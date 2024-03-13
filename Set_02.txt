@@ -1,0 +1,738 @@
+C PROGRAM - CONTROL FLOW
+------------------------
+
+1. C program to Check Whether a Number is Positive or Negative or Zero
+
+#include<stdio.h>
+int main()
+{
+    int n;
+
+    printf("Enter the value of n\n");
+    scanf("%d", &n);
+
+    if (n > 0)
+    {
+        printf("%d is positive", n);
+    }
+    else if (n < 0)
+    {
+        printf("%d is negative", n);
+    }
+    else
+    {
+        printf("%d is Zero", n);
+    }
+}
+
+2. C Program – Even or Odd Number
+
+#include<stdio.h>
+int main()
+{
+    int n = 7;
+
+    if (n % 2 == 0)
+    {
+        printf("Even");
+    }
+    else
+    {
+        printf("Odd");
+    }
+}
+
+3. C Program to Check Vowel or Consonant (if - else)
+
+#include<stdio.h>
+int main()
+{
+    char ch = 'z';
+
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')  // LowerCase
+    {
+        printf("%c is a vowel", ch);
+    }
+    else if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')  // UpperCase
+    {
+        printf("%c is a vowel", ch);
+    }
+    else
+    {
+        printf("%c is a consonant", ch);
+    }
+}
+
+3. C Program to Check Vowel or Consonant (using strchr())
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char vowels[] = "aeiouAEIOU";
+
+    if (strchr(vowels, 'E') == NULL)
+    {
+        printf("Consonant");
+    }
+    else
+    {
+        printf("Vowel");
+    }
+}
+
+// strchr() - It is a predefined function used for finding the occurrence of a character in a string.
+
+// Returns pointer to the first occurrence of char in str[]
+
+// Returns NULL if the char is not found in str[]
+
+4. C program to Find the Largest Number Among Three Numbers
+
+#include<stdio.h>
+int main()
+{
+    int a = 56;
+    int b = 20;
+    int c = 17;
+
+    if (a >= b && a >= c)
+    {
+        printf("%d", a);
+    }
+    else if (b >= c)
+    {
+        printf("%d", b);
+    }
+    else
+    {
+        printf("%d", c);
+    }
+}
+
+5. C Program to Calculate Sum of Natural Numbers
+
+// sum = n*(n+1)/2
+
+#include<stdio.h>
+int main()
+{
+    int n = 10, sum = 0;
+
+    for (int i = 1; i <= n; i++)
+    {
+        sum += i;
+    }
+    
+    printf("Sum: %d", sum);
+}
+
+6. Program to Print Alphabets From A to Z Using Loop
+
+#include<stdio.h>
+int main()
+{
+    for (int i = 'A'; i <= 'Z'; i++)
+    {
+        printf("%c ", i);
+    }    
+}
+
+7. Leap Year Program in C
+
+#include <stdio.h>
+int main()
+{
+    int year = 1900;
+
+    if (year % 400 == 0)
+    {
+        printf("true");
+    }
+    else if (year % 100 == 0)
+    {
+        printf("false");
+    }
+    else if (year % 4 == 0)
+    {
+        printf("true");
+    }
+    else
+    {
+        printf("false");
+    }
+}
+
+8. Factorial Program in C (Using Loops)
+
+#include<stdio.h>
+int main()
+{
+    int n = 5, factorial = 1;
+
+    for (int i = 1; i <= n; i++)
+    {
+        factorial *= i;
+    }
+    
+    printf("Factorial: %d", factorial);
+}
+
+8. Factorial Program in C (Reccursions)
+
+#include <stdio.h>
+
+int factorial(int);
+
+int main()
+{
+    printf("Factorial: %d", factorial(5));
+}
+
+int factorial(int n)
+{
+    if (n == 1 || n == 0)
+    {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+9. C Program to Make a Simple Calculator
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b;
+    char ch;
+    char x;
+
+    while (1)
+    {
+        printf("Enter Y for Yes and N for No\n");
+        scanf(" %c", &x);
+
+        if (x != 'Y')
+        {
+            break;
+        }
+
+        printf("Enter the value of a\n");
+        scanf("%d", &a);
+        printf("Enter the value of b\n");
+        scanf("%d", &b);
+        printf("Enter the operation\n");
+        scanf(" %c", &ch);
+
+        switch (ch)
+        {
+        case '+':
+            printf("%d \n", a + b);
+            break;
+
+        case '-':
+            printf("%d \n", a - b);
+            break;
+
+        case '*':
+            printf("%d \n", a * b);
+            break;
+
+        case '/':
+            printf("%d \n", a / b);
+            break;
+
+        case '%':
+            printf("%d \n", a % b);
+            break;
+
+        default:
+            printf("Invalid operation\n");
+            break;
+        }
+    }
+    return 0;
+}
+
+10. C Program to Generate Multiplication Table
+
+#include<stdio.h>
+int main()
+{
+    int n = 5;
+
+    for (int i = 1; i <= 10; i++)
+    {
+        printf("%d x %d = %d\n", n, i, n*i);
+    }
+}
+
+11. Fibonacci Series Program in C (Using Loops)
+
+#include<stdio.h>
+int main()
+{
+    int a = 0, b = 1, c;
+
+    printf("%d %d ", a, b);
+
+    for (int i = 1; i <= 9; i++)
+    {
+        if (i > 2)
+        {
+            c = a + b;
+            a = b;
+            b = c;
+            printf("%d ", c);
+        }
+    }
+}
+
+11. Fibonacci Series Program in C (Using Reccursions)
+
+#include <stdio.h>
+
+int fibonacci(int n) // Calculate the fibonacci series
+{
+    if (n <= 1)
+    {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+void printSeries(int n) // Print the fibonacci series
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", fibonacci(i));
+    }
+}
+
+int main()
+{
+    printSeries(9);
+}
+
+12. LCM of Two Numbers in C
+
+#include<stdio.h>
+int main()
+{
+    int a = 15, b = 25, max;
+
+    max = (a >= b) ? a : b;
+
+    while (1)
+    {
+        if (max % a == 0 && max % b == 0)
+        {
+            printf("LCM: %d", max);
+            break;
+        }
+        max += 1;
+    }
+}
+
+12. LCM of Two Numbers using GCD
+
+// LCM(a, b) = (a x b) / GCD(a, b)
+
+#include <stdio.h>
+
+int GCD(int a, int b)
+{
+    int min = (a <= b) ? a : b;
+
+    for (int i = min; i; i--)
+    {
+        if (a % i == 0 && b % i == 0)
+        {
+            return i;
+        }
+    }
+}
+
+int LCM(int a, int b)
+{
+    int gcd = GCD(a, b);
+
+    return (a * b)/gcd;
+}
+
+int main()
+{
+    int a = 15;
+    int b = 25;
+
+    printf("LCM: %d", LCM(a, b));
+}
+
+13. C Program to Check Armstrong Number
+
+#include <stdio.h>
+#include <math.h>
+
+int digit(int n)
+{
+    int cnt = 0;
+
+    while (n)
+    {
+        cnt += 1;
+        n = n/10;
+    }
+    return cnt;
+}
+
+void armstrong(int n)
+{
+    int temp = n, tot = 0;
+
+    int c = digit(n);
+
+    while (temp)
+    {
+        int rem = temp % 10;
+        tot += pow(rem, c);
+        temp = temp / 10;
+    }
+
+    if (tot == n)
+    {
+        printf("True");
+    }
+    else
+    {
+        printf("False");
+    }
+}
+
+int main()
+{
+    int n = 153;
+
+    armstrong(n);
+}
+
+14. C Program to Display Armstrong Number Between Two Intervals
+
+#include <stdio.h>
+#include <math.h>
+
+int digit(int n)
+{
+    int cnt = 0;
+
+    while (n)
+    {
+        cnt += 1;
+        n = n/10;
+    }
+    return cnt;
+}
+
+int armstrong(int n)
+{
+    int temp = n, tot = 0;
+
+    int c = digit(n);
+
+    while (temp)
+    {
+        int rem = temp % 10;
+        tot += pow(rem, c);
+        temp = temp / 10;
+    }
+
+    if (tot == n)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    for (int i = 1; i <= 1000; i++)
+    {
+        if (armstrong(i) == 1)
+        {
+            printf("%d ", i);
+        }
+    }    
+}
+
+15. Reverse Number Program in C
+
+#include<stdio.h>
+int main()
+{
+    int num = 153, a = 0;
+
+    while (num)
+    {
+        int rem = num % 10;
+        a = (a * 10) + rem;
+        num = num / 10;
+    }
+
+    printf("Reverse: %d", a);
+}
+
+16. Palindrome Number Program in C
+
+#include<stdio.h>
+
+int reverse(int num)
+{
+    int a = 0;
+
+    while (num)
+    {
+        int rem = num % 10;
+        a = (a * 10) + rem;
+        num = num / 10;
+    }
+    return a;
+}
+
+int main()
+{
+    int num = 151, a;
+
+    a = reverse(num);
+
+    if (a == num)
+    {
+        printf("Palindrome");
+    }
+    else
+    {
+        printf("Not a Palindrome");
+    }
+}
+
+17. Prime Number Program in C
+
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    int n = 57, isPrime = 1;
+
+    if (n == 0 || n == 1)
+    {
+        printf("Not Prime");
+        isPrime = 0;
+    }
+
+    double sqroot = sqrt(n);
+
+    for (int i = 2; i <= sqroot; i++)
+    {
+        if (n % i == 0)
+        {
+            printf("Not Prime");
+            isPrime = 0;
+            break;
+        }
+    }
+    
+    if (isPrime == 1)
+    {
+        printf("Prime");
+    }
+}
+
+18. C Program to Display Prime Numbers Between Intervals
+
+#include<stdio.h>
+
+int isPrime(int);
+
+int main()
+{
+    int lb = 1, ub = 10;
+
+    for (int i = lb; i <= ub; i++)
+    {
+        if (isPrime(i) == 1)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+
+int isPrime(int n)
+{
+    if (n == 1 || n == 0)
+    {
+        return -1;
+    }
+    for (int i = 2; i <= n/2 ; i++)
+    {
+        if (n % i == 0)
+        {
+            return -1;
+        }
+    }
+    return 1;
+}
+
+18. C Program to Display Prime Numbers Between Intervals (Sieve of Eratosthenes Method)
+
+Time complexity - O(n log log n)
+
+#include<stdio.h>
+
+void Sieve(int n)
+{
+    int arr[n+1];
+
+    arr[0] = 0;
+    arr[1] = 0;
+
+    for (int i = 2; i <= n+1; i++)  // Initialising all the numbers as prime
+    {
+        arr[i] = 1;
+    }
+    for (int i = 2; i*i <= n; i++)
+    {
+        if (arr[i] == 1)    // arr[i] = Prime 
+        {
+            for (int j = 2*i; j <= n; j += i)  // Modifying all the multiples of i as not prime
+            {
+                arr[j] = 0;
+            }
+        }
+    }
+    for (int i = 2; i <= n ; i++)   // Printing the primes
+    {
+        if (arr[i] == 1)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+
+int main()
+{
+    int n = 20;
+
+    Sieve(n);
+}
+
+// Optimised Version 
+
+/*
+for (int i = 2; i <= n; i++)
+{
+    if (arr[i] == 1)
+    {
+        printf("%d ", i);
+
+        for (int j = i*i; j <= n; j += i)
+        {
+            arr[i] = 0;
+        }
+    }
+}
+*/
+
+19. C Program To Check Neon Number
+
+Neon Number -> Sum of the digits of the square of the number is equal to the number
+
+// 9 => 9 * 9 = 81 => 8 + 1 = 9 => 9 == 9 -> Neon Number
+
+#include<stdio.h>
+int main()
+{
+    int num = 9, sq, sum = 0;
+
+    sq = num * num;
+
+    while (sq)
+    {
+        int rem = sq % 10;
+        sum += rem;
+        sq = sq / 10;
+    }
+    
+    if (sum == num)
+    {
+        printf("Neon Number");
+    }
+    else
+    {
+        printf("Not a Neon Number");
+    }
+}
+
+20. C Program to Find All Factors of Number
+
+#include<stdio.h>
+int main()
+{
+    int num = 50;
+
+    for (int i = 1; i <= num; i++)
+    {
+        if (num % i == 0)
+        {
+            printf("%d ", i);
+        }
+    }
+}
+
+20. C Program to Find All Factors of Number (Optimised)
+
+Time complexity -> O(sqrt(n))
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int num = 50;
+
+    for (int i = 1; i <= sqrt(num); i++)
+    {
+        if (num % i == 0)
+        {
+            printf("%d %d ", i, num/i);
+        }
+    }
+}
+
+21. C Program to Find the Sum of Fibonacci Numbers at Even Indexes up to N Terms
+
+#include<stdio.h>
+int main()
+{
+    int n = 5;
+    int a = 0;
+    int b = 1;
+    int s = 0;
+
+    for (int i = 2; i <= 2*n; i++)
+    {
+        int c = a + b;
+        a = b;
+        b = c;
+
+        if (i % 2 == 0)
+        {
+            s += c;
+        }
+    }
+    
+    printf("Sum: %d", s);
+}
